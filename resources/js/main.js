@@ -6,6 +6,11 @@ var getJSON = function() {
                  '	"StoryTitle":"Story 1", ' +
                  '	"WordsNeeded":["noun", "verb"],' +
                  '	"Story":"There once was a [noun] that [verb]!" ' +
+                 '  },' +
+                 '  { ' +
+                 '	"StoryTitle":"Story 2", ' +
+                 '	"WordsNeeded":["noun", "verb"],' +
+                 '	"Story":"There once was a [noun] that [verb]!" ' +
                  '  }' +
                  ']}'
 
@@ -30,7 +35,7 @@ var selectStory = function(list) {
     //dispText = '<h2>Story List</h2>';
     while (i < list.MadLibsStories.length) {
       console.log (list.MadLibsStories[i].StoryTitle);
-      dispText += '<button class="story_list_item" onclick="function(return ' + i + ')">' + list.MadLibsStories[i].StoryTitle + '</button>';
+      dispText += '<button class="story_list_item" click="function(){console.log(' + i + ');}">' + list.MadLibsStories[i].StoryTitle + '</button>';
       i++;
     }
   };
@@ -51,6 +56,12 @@ var readStory = function() {
   storyId = selectStory(storyList)
 }
 
+var getWindowWidth = function() {
+  var text = " ";
+  text = text + window.innerWidth;
+
+  $("p:first").append(text);
+}
 var main = function() {
 
 }
